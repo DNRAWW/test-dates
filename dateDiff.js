@@ -5,12 +5,10 @@ function daysInMonth (month, year) {
 function getInterval(start, end) {
   // Setting correct days
   start.setDate(start.getDate() + 1);
-  end.setDate(end.getDate() + 1);
+  end.setDate(end.getDate() + 2);
 
   const startString = start.toISOString().split('T')[0];
   const endString = end.toISOString().split('T')[0];
-
-  console.log(start, end)
 
   if(startString === endString) {
     return {
@@ -48,4 +46,4 @@ function getInterval(start, end) {
   };
 }
 
-console.log(getInterval(new Date(2023, 12, 1), new Date(2024, 3, 2)));
+console.log(getInterval(new Date(2023, 1, 26), new Date(2023, 6, 23)));
